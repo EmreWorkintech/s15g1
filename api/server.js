@@ -1,6 +1,6 @@
 const express = require("express");
 const server = express();
-const sesssion = require('express-session');
+const session = require('express-session');
 
 const authRouter = require('./auth/auth-router');
 const userRouter = require('./users/users-router');
