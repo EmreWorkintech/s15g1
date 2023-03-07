@@ -19,7 +19,14 @@ function findbyFilter(filter) {
     return db("users").where(filter);
 }
 
+async function create(payload) {
+    const [id] = await db('users').insert(payload);
+    const createdUser = await db("users").where({id}).first();
+    return createdUser;
+}
+
 module.exports = {
     find,
-    findbyFilter
+    findbyFilter,
+    create
 }

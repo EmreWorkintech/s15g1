@@ -3,7 +3,7 @@ const UserModel = require('../users/users-model');
 
 const bcrypt = require('bcryptjs');
 
-router.post('register', async (req,res,next)=>{
+router.post('/register', async (req,res,next)=>{
     try {
         //kullanıcıyı req body'den aldım.
         const newUser = req.body;  //username, password
@@ -21,7 +21,7 @@ router.post('register', async (req,res,next)=>{
     }
 })
 
-router.post('login', async (req,res,next)=>{
+router.post('/login', async (req,res,next)=>{
     try {
         // login bilgilerini aldık
         const {username, password} = req.body;
@@ -43,7 +43,7 @@ router.post('login', async (req,res,next)=>{
     
 })
 
-router.get('logout', (req,res,next)=>{
+router.get('/logout', (req,res,next)=>{
     try {
         if(req.session.user) {
             req.session.destroy(err => {
@@ -63,7 +63,7 @@ router.get('logout', (req,res,next)=>{
     }
 })
 
-router.post('reset/password', (req,res,next)=>{
+router.post('/reset/password', (req,res,next)=>{
     //sizde!!!
 })
 
